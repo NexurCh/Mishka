@@ -1,0 +1,548 @@
+@import "global";
+@import "vars";
+@import "fonts";
+
+.main-nav {
+
+    @extend %os-bold;
+    font-size: 17px;
+    line-height: 24px;
+    color: $black;
+    border: 1px solid yellow;
+
+    // display: flex;
+
+    .main-nav__logo-wrapper {
+        border: 1px solid green;
+    }
+
+    .main-nav__site-list {
+        border: 1px solid palevioletred;
+    }
+
+    .main-nav__user-list {
+        border: 1px solid darkblue;
+    }
+
+    .main-nav__stock-list {
+        border: 1px solid darkslateblue
+    }
+
+    .main-nav__delivery-text {
+
+        @extend %os-regular;
+        font-size: 15px;
+        line-height: 24px;
+        color: $greyish-brown;
+        margin: 0;
+    }
+
+    @media ($mobile) {
+        min-height: 400px;
+        width: 320px;
+        margin: 0 auto;
+
+        .main-nav__stock-list {
+            display: none;
+        }
+
+        .main-nav__delivery-text {
+            display: none;
+        }
+    }
+
+    @media ($tablet) {
+        min-height: 150px;
+        width: 768px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .main-nav__logo-wrapper {
+            width: 50%;
+        }
+
+        .main-nav__site-list {
+            order: 1;
+            display: flex;
+        }
+
+        .main-nav__user-list {
+            order: 0;
+            width: 50%;
+            display: flex;
+        }
+
+        .main-nav__stock-list {
+            display: none;
+        }
+
+        .main-nav__delivery-text {
+            order: 2;
+            display: block;
+        }
+    }
+
+    @media ($desktop) {
+        min-height: 150px;
+        width: 1150px;
+
+        .main-nav__logo-wrapper {
+            order: 1;
+            width: 20%;
+        }
+
+        .main-nav__site-list {
+            order: 0;
+            display: flex;
+            width: 40%;
+        }
+
+        .main-nav__user-list {
+            order: 2;
+            width: 40%;
+            display: flex;
+        }
+
+        .main-nav__stock-list {
+            display: flex;
+            order: 3;
+        }
+
+        .main-nav__delivery-text {
+            order: 4;
+        }
+    }
+
+}
+
+.site-list,
+.user-list {
+
+    @media ($mobile) {
+        &__item {
+            padding: 30px 0px 30px 45px;
+            box-shadow: 0px 1px 0 0 #ececec, inset 0px 1px 0 0 #ececec;
+        }
+    }
+
+    @media ($tablet) {
+        &__item {
+            padding: 0;
+            box-shadow: none;
+        }
+    }
+}
+
+.stock-list {
+    font-size: 15px;
+}
+
+
+.selection {
+    @extend %os-bold;
+
+    &__title {
+        font-size: 27px;
+        line-height: 30px;
+        color: $very-dark-brown;
+        margin: 0;
+    }
+
+    &__link {
+        font-size: 19px;
+        line-height: 24px;
+        color: $white;
+    }
+
+    &__item--interior {
+        background-color: $seafoam-blue;
+    }
+
+    &__item--toys {
+        background-color: $greeny-blue;
+    }
+
+    @media ($mobile) {
+        width: 320px;
+        margin: 0 auto;
+
+        .selection__title {
+            padding: 70px 30px 120px 30px;
+            text-align: center;
+            background-image: url(../images/hero-mobile.jpg);
+            background-position: center -20px;
+            background-repeat: no-repeat;
+        }
+
+        .selection__item {
+            padding: 30px 0 30px 30px;
+            position: relative;
+        }
+
+        .selection__item--interior::after {
+            content: "";
+            position: absolute;
+            top: 23px;
+            right: 36px;
+            width: 40px;
+            height: 62px;
+            background-image: url(../images/interior.svg);
+        }
+
+        .selection__item--toys::after {
+            content: "";
+            position: absolute;
+            top: 24px;
+            right: 27px;
+            width: 60px;
+            height: 60px;
+            background-image: url(../images/toy-svg.svg);
+            fill: #149080;
+        }
+    }
+
+    @media ($tablet) {
+        width: 768px;
+
+        .selection__title {
+            font-size: 43px;
+            line-height: 50px;
+            color: $black;
+            padding: 100px 50px 360px 50px;
+            text-align: center;
+            background-image: url(../images/hero-desktop.jpg);
+            background-position: center -50px;
+            background-repeat: no-repeat;
+        }
+
+        .selection__list {
+            padding: 0 50px;
+            display: flex;
+        }
+
+        .selection__item {
+            width: 334px;
+        }
+    }
+
+    @media ($desktop) {
+        width: 1150px;
+
+        .selection__title {
+            font-size: 53px;
+            line-height: 57px;
+            padding: 100px 100px 346px 100px;
+        }
+
+        .selection__item {
+            width: 526px;
+        }
+    }
+}
+
+.featured {
+
+    &__item {
+        @extend %os-bold;
+        font-size: 25px;
+        line-height: 30px;
+        color: $black;
+        margin: 0;
+    }
+
+    &__title {
+        @extend %os-bold;
+        font-size: 17px;
+        line-height: 20px;
+        color: $seafoam-blue;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    &__description {
+        @extend %os-regular;
+        font-size: 15px;
+        line-height: 24px;
+        color: $greyish-brown;
+    }
+
+    &__table {
+        @extend %os-regular;
+        font-size: 15px;
+        line-height: 20px;
+        color: $greyish-brown;
+    }
+
+    &__price {
+        @extend %os-bold;
+        font-size: 17px;
+        line-height: 24px;
+        color: $greyish-brown;
+        text-align: center;
+    }
+
+    @media ($mobile) {
+        width: 320px;
+        margin: 0 auto;
+
+        .featured__wrapper {
+            padding: 0 50px;
+        }
+    }
+
+    @media ($tablet) {
+        width: 768px;
+
+        .featured__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .featured__item {
+            width: 500px;
+            font-size: 43px;
+            line-height: 50px;
+        }
+
+        .featured__title {
+            width: 70px;
+            height: 50px;
+            font-size: 17px;
+            line-height: 17px;
+            margin-right: 25px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .featured__table-wrapper {
+            width: 292px;
+        }
+
+        .featured__description {
+            font-size: 17px;
+            line-height: 30px;
+            width: 282px;
+            margin: 50px 0 40px;
+        }
+
+        .featured__property {
+            width: 95px;
+            height: 40px;
+        }
+
+        .featured__image-wrapper {
+            position: absolute;
+            right: 50px;
+            top: 110px;
+        }
+
+        .featured__price {
+            margin: 40px 0 30px;
+        }
+
+        .featured__button {
+            width: 100%;
+        }
+    }
+
+    @media ($desktop) {
+        width: 1150px;
+
+        .featured__wrapper {
+            margin-top: 60px;
+            padding-top: 60px;
+            justify-content: flex-start;
+        }
+
+        .featured__wrapper::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -20px;
+            height: 7px;
+            background-image: url("../images/zigzag-line-desktop.svg");
+            background-size: 320px 7px;
+            background-position-x: -8px;
+            background-repeat: repeat-x;
+        }
+
+        .featured__item {
+            width: 775px;
+            font-size: 53px;
+            line-height: 57px;
+
+        }
+
+        .featured__title {
+            width: 175px;
+            order: -1;
+            padding: 0 45px;
+            margin: 0;
+        }
+
+        .featured__table-wrapper {
+            margin-left: 175px;
+        }
+
+        .featured__image-wrapper {
+            position: absolute;
+            right: 50px;
+            top: 0;
+            z-index: -1;
+        }
+
+        .featured__price {
+            margin: 90px 0 30px;
+        }
+    }
+
+}
+
+.about {
+    &__title {
+        @extend %os-bold;
+        font-size: 25px;
+        line-height: 30px;
+        color: $black;
+
+    }
+
+    &__text {
+        @extend %os-bold;
+        font-size: 17px;
+        line-height: 20px;
+        color: $black;
+    }
+
+    .about__list {
+        display: flex;
+        flex-direction: column;
+        padding: 0 30px;
+    }
+
+    @media ($mobile) {
+        width: $width-mobile;
+        margin: 0 auto;
+
+        .about__title,
+        .about__list {
+            padding: 0 30px;
+        }
+
+        .about_item:nth-child(odd) {
+            order: -1;
+        }
+    }
+
+    @media ($tablet) {
+        width: $width-tablet;
+
+        .about__title {
+            padding: 0 50px;
+        }
+
+        .about__list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 0 50px;
+            
+        }
+
+        .about_item {
+            width: 50%;
+            height: 110px;
+        }
+
+        .about_item:nth-child(odd) {
+            order: 0;
+        }
+    }
+
+    @media ($desktop) {
+        width: $width-desktop;
+
+        .about__title,
+        .about__list {
+            padding: 0 225px;
+        }
+    }
+
+}
+
+.reviews {
+    &__title {
+        @extend %os-bold;
+        font-size: 25px;
+        line-height: 30px;
+        color: $black;
+    }
+
+    &__text {
+        @extend %os-regular;
+        font-size: 15px;
+        line-height: 30px;
+        color: $greyish-brown;
+    }
+
+    &__author {
+        @extend %os-bold;
+        font-size: 17px;
+        line-height: 24px;
+        color: $black;
+    }
+
+    &__email {
+        @extend %os-regular;
+        font-size: 17px;
+        line-height: 30px;
+        color: $greyish-brown;
+    }
+
+
+}
+
+.contacts {
+    @extend %os-regular;
+    font-size: 15px;
+    line-height: 30px;
+    color: $greyish-brown;
+
+    &__title {
+        @extend %os-bold;
+        font-size: 18px;
+        line-height: 30px;
+        color: $black;
+    }
+}
+
+.copyright {
+    &__text {
+        @extend %os-bold;
+        font-size: 19px;
+        line-height: 19px;
+        color: $black;
+    }
+}
+
+.button {
+    @extend %os-bold;
+    font-size: 18px;
+    line-height: 20px;
+    color: $greyish-brown;
+    text-transform: uppercase;
+
+    border: solid 2px $greyish-brown;
+    background-color: $white;
+    cursor: pointer;
+    padding: 20px 0px;
+    width: 260px;
+    ;
+}

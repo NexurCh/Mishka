@@ -1,0 +1,26 @@
+%os-regular {
+    font-family: "opensans-regular", sans-serif;
+    font-weight: normal;
+}
+
+%os-bold {
+    font-family: "opensans-bold", sans-serif;
+    font-weight: bold;
+}
+
+$mobile: "min-width: 320px";
+$tablet: "min-width: 768px";
+$desktop: "min-width: 1150px";
+
+$width-mobile: 320px;
+$width-tablet: 768px;
+$width-desktop: 1150px;
+
+$greeny-blue: #56c3b2;
+$greyish-brown: #444444;
+$seafoam-blue: #63d1bb;
+$very-dark-brown: #010000;
+$black: #000000;
+$blue-green: #149080;
+$gray: #f1f1f1;
+$white: #ffffff;
