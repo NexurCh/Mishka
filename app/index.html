@@ -201,20 +201,31 @@
     <section class="contacts">
       <h2 class="contacts__title">Контакты</h2>
       <table class="contacts__table">
-        <tr>
+        <tr class="contacts__table-row">
           <td class="contacts__property">e-mail:</td>
           <td class="contacts__value">info@mimimishkashop.ru</td>
         </tr>
-        <tr>
+        <tr class="contacts__table-row">
           <td class="contacts__property">адрес:</td>
           <td class="contacts__value">г. Санкт-Петербург,
             ул. Большая Конюшенная,
-            д. 19/8, офис 101</td>
+            д. 19/8, офис 101
+          </td>
         </tr>
       </table>
 
-      <img class="contacts__map" src="images/map-mobile@1x.jpg" width="320" height="457"
-        alt="адрес: г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8, офис 101">
+      <!-- <img class="contacts__map" src="images/map-tablet@1x.jpg" width="320" height="457"
+        alt="адрес: г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8, офис 101"> -->
+
+      <div class="contacts__map">
+        <picture>
+          <source media="(min-width: 1150px)" srcset="images/map-desktop@1x.jpg" width="150" height="150">
+          <source media="(min-width: 768px)" srcset="images/map-tablet@1x.jpg">
+          <source media="(min-width: 320px)" srcset="images/map-mobile@1x.jpg">
+          <img src="images/map-mobile@1x.jpg"
+            alt="адрес: г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8, офис 101">
+        </picture>
+      </div>
 
       <button class="button contacts__button" type="button">Напишите нам</button>
     </section>
@@ -222,6 +233,11 @@
 
   <footer class="page-footer">
     <div class="page-footer__wrapper">
+
+      <div class="page-footer__logo-wrapper">
+        <img class="page-footer__logo" src="images/logo-footer.svg" alt="Логотип сайта" width="102" height="34">
+      </div>
+
       <div class="page-footer__social social">
         <ul class="social__list">
           <li class="social__item">
@@ -236,10 +252,12 @@
           </li>
         </ul>
       </div>
+
       <div class="page-footer__copyright copyright">
         <b class="copyright__text">Разработано:</b>
         <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
       </div>
+
     </div>
   </footer>
 
